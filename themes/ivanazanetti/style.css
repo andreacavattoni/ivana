@@ -1,0 +1,1706 @@
+/*
+Theme Name: Ivana Zanetti
+Author: Designtn
+Description: Tema custom per ivanazanetti.it — sostituisce Divi.
+Version: 2024
+Requires at least: 5.2
+Tested up to: 6.1
+Requires PHP: 7.0
+License: GNU General Public License v3 or Later
+License URI: https://www.gnu.org/licenses/gpl.html
+Text Domain: ivanazanetti
+
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline
+}
+html {
+  scroll-behavior: smooth
+}
+body {
+  line-height: 1
+}
+a {
+  text-decoration-skip-ink: auto
+}
+a[href^="tel"] {
+  color: inherit;
+  text-decoration: none
+}
+button {
+  outline: 0
+}
+ol, ul {
+  list-style: none
+}
+blockquote, q {
+  quotes: none
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none
+}
+q {
+  display: inline;
+  font-style: italic
+}
+q:before {
+  content: '"';
+  font-style: normal
+}
+q:after {
+  content: '"';
+  font-style: normal
+}
+textarea, input[type="text"], input[type="button"], input[type="submit"], input[type="reset"], input[type="search"], input[type="password"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0
+}
+input[type="search"] {
+  -webkit-appearance: textfield
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+th, td {
+  padding: 2px
+}
+big {
+  font-size: 120%
+}
+small, sup, sub {
+  font-size: 80%
+}
+sup {
+  vertical-align: super
+}
+sub {
+  vertical-align: sub
+}
+dd {
+  margin-left: 20px
+}
+kbd, tt {
+  font-family: courier;
+  font-size: 12px
+}
+ins {
+  text-decoration: underline
+}
+del, strike, s {
+  text-decoration: line-through
+}
+dt {
+  font-weight: bold
+}
+address, cite, var {
+  font-style: italic
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block
+}
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent
+}
+.sticky {}
+.bypostauthor {}
+.wp-caption {}
+.wp-caption-text {}
+.gallery-caption {}
+.alignright {}
+.alignleft {}
+.aligncenter {}
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  word-break: normal
+}
+.screen-reader-text:focus {
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+  clip: auto !important;
+  -webkit-clip-path: none;
+  clip-path: none;
+  color: #007acc;
+  display: block;
+  font-size: 14px;
+  font-size: .875rem;
+  font-weight: 700;
+  height: auto;
+  right: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000
+}
+.skip-link {
+  left: -9999rem;
+  top: 2.5rem;
+  z-index: 999999999;
+  text-decoration: underline
+}
+.skip-link:focus {
+  display: block;
+  left: 6px;
+  top: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  z-index: 100000;
+  right: auto
+}
+.visually-hidden:not(:focus):not(:active), .form-allowed-tags:not(:focus):not(:active) {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap
+}
+
+
+/* =========================================================================
+   Token — valori presi 1:1 da "Home Page.dc.html" (Claude Design)
+   ========================================================================= */
+:root {
+  --sfondo:      #F7F1F1;  /* fondo pagina */
+  --marrone:     #65494D;  /* testo forte, link, card categoria */
+  --rosa:        #BE8991;  /* accento: titoli, bottoni */
+  --rosa-chiaro: #D6B7BB;  /* blocchi chiari, cerchi, barra servizi */
+  --rosa-scuro:  #AF7F86;  /* divisori, barra di avanzamento */
+  --swoosh:      #CCAFB2;  /* sottolineatura dell'hero */
+  --crema:       #EBDDDF;  /* fondo "Chi sono" */
+  --barra:       #ECE2E4;  /* fondo barra legale */
+  --testo:       #0F0F0F;
+  --testo-chi:   #402E31;
+  --white:       #FFFFFF;
+
+  --font-base:  'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --font-barra: 'Nunito', sans-serif;
+
+  /* Il design usa clamp() ovunque: le misure scalano con la viewport. */
+  --gutter:   clamp(20px, 4.7vw, 90px);
+  --spazio:   clamp(64px, 5.6vw, 108px);  /* distanza fra sezioni */
+  --max:      1920px;
+}
+
+/* --- base ---------------------------------------------------------------
+   In coda al reset: piu' in alto `font: inherit` azzererebbe il font. */
+body {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--testo);
+  background: var(--sfondo);
+  overflow-x: hidden;
+}
+strong, b { font-weight: 700; }
+em, i     { font-style: italic; }
+a         { color: var(--marrone); text-decoration: none; }
+a:hover   { color: var(--rosa); }
+img       { max-width: 100%; }
+
+/* Contenitore standard: stesso gutter di tutte le sezioni del design. */
+.container-iz {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* --- tipografia ricorrente ---------------------------------------------- */
+.sopratitolo {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(18px, 1.56vw, 30px);
+  line-height: 1.33;
+  text-transform: uppercase;
+  color: var(--marrone);
+}
+.titolo-grande {
+  margin: 12px 0 0;
+  font-weight: 700;
+  font-size: clamp(52px, 5.9vw, 113px);
+  line-height: .93;
+  color: var(--rosa);
+}
+.titolo-medio {
+  margin: 8px 0 0;
+  font-weight: 700;
+  font-size: clamp(40px, 4.17vw, 80px);
+  line-height: 1.1;
+  color: var(--rosa);
+}
+.titolo-piccolo {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(36px, 2.86vw, 55px);
+  line-height: 1.9;
+  color: var(--rosa);
+}
+.testo-corrente {
+  font-weight: 400;
+  font-size: clamp(18px, 1.4vw, 27px);
+  line-height: 1.15;
+}
+
+/* --- bottoni ------------------------------------------------------------- */
+.bottone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 47px;
+  padding: 0 40px;
+  border: 0;
+  border-radius: 24px;
+  background: var(--rosa);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease;
+}
+.bottone:hover { background: var(--marrone); color: var(--white); }
+
+/* Variante vuota, come il tasto INVIA del form. */
+.bottone-vuoto {
+  border: 1.5px solid var(--rosa);
+  background: transparent;
+  color: var(--marrone);
+  font-size: 20px;
+}
+.bottone-vuoto:hover { background: var(--rosa); color: var(--white); }
+
+/* =========================================================================
+   HEADER
+   ========================================================================= */
+#header {
+  padding: 35px clamp(16px, 2.45vw, 47px) 52px;
+  background: var(--sfondo);
+}
+#header .h-interno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+#header .logo img { width: 266px; max-width: 60vw; height: auto; display: block; }
+
+#menu ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 40px);
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#menu a {
+  font-weight: 500;
+  font-size: clamp(16px, 1.25vw, 24px);
+  text-transform: uppercase;
+  color: var(--marrone);
+}
+#menu a:hover { color: var(--rosa); }
+
+/* SHOP: pillola con separatore e carrello, come nel design. */
+/* La pillola e' il <li>: dentro ci sono due link, "SHOP" (al negozio) e
+   l'icona (al carrello), separati da una riga bianca. */
+#menu .voce-shop {
+  display: flex;
+  align-items: center;
+  height: 47px;
+  border-radius: 24px;
+  background: var(--rosa);
+  overflow: hidden;
+}
+/* Due bottoni nella stessa pillola, con due hover diversi: SHOP scurisce,
+   il carrello si schiarisce e l'icona diventa marrone. */
+#menu .voce-shop > a:first-child {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 18px 0 40px;
+  transition: background .25s ease;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+#menu .voce-shop > a:first-child:hover { background: var(--marrone); }
+.voce-shop .h-carrello {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px 0 18px;
+  transition: background .25s ease;
+}
+.voce-shop .h-carrello:hover { background: var(--crema); }
+/* Il separatore sta FRA testo e carrello. */
+.voce-shop .h-carrello:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: var(--white);
+}
+/* L'icona e' il file SVG usato come maschera: si colora col background
+   (bianca, marrone all'hover) e il viewBox ha 1px di margine, quindi il
+   contorno non viene tagliato. */
+.voce-shop .h-c-icona {
+  display: block;
+  width: 25px;
+  height: 18px;
+  background: var(--white);
+  -webkit-mask: url(images/icone/carrello-bianco.svg) center / contain no-repeat;
+  mask: url(images/icone/carrello-bianco.svg) center / contain no-repeat;
+  transition: background .25s ease;
+}
+.voce-shop .h-carrello:hover .h-c-icona { background: var(--marrone); }
+.voce-shop .h-carrello:hover:before { opacity: 0; }
+.voce-shop a:hover { color: var(--white); }
+.voce-shop .h-carrello:hover .h-c-conta { background: var(--marrone); color: var(--white); }
+
+/* Numero di articoli: pallino sopra l'icona. */
+.voce-shop .h-c-conta {
+  position: absolute;
+  top: 3px;
+  right: 8px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--marrone);
+  font: 700 12px/19px var(--font-base);
+  text-align: center;
+}
+.voce-shop .h-c-conta.vuoto { display: none; }
+#header .ham { display: none; }
+#fix-menu { display: none; }
+
+/* =========================================================================
+   HERO
+   ========================================================================= */
+.sezione-hero { padding: 0 clamp(0px, 2.45vw, 47px); }
+.sezione-hero .s-h-quadro {
+  position: relative;
+  min-height: clamp(560px, 47.4vw, 910px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.sezione-hero .s-h-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+/* Velo rosato sopra la foto: e' nel design, non e' decorazione mia. */
+.sezione-hero .s-h-velo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgb(255, 242, 244);
+  opacity: .473;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Schiarita sulla fascia del testo. Deve stare FUORI dal velo: un elemento
+   con mix-blend-mode fa gruppo di fusione anche per i figli, quindi dentro
+   verrebbe moltiplicato (scurito) invece che sovrapposto.
+   Il design tara il velo su una foto chiara; con una scura il testo marrone
+   sparisce. Su una foto chiara questa sfumatura si nota appena. */
+.sezione-hero .s-h-quadro:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(250, 238, 239, .96) 0%,
+    rgba(250, 238, 239, .90) 28%,
+    rgba(250, 238, 239, .50) 52%,
+    rgba(250, 238, 239, 0) 74%);
+}
+
+.sezione-hero .s-h-testo {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 0 clamp(20px, 3.5vw, 67px);
+}
+.sezione-hero .s-h-titolo {
+  margin: 0;
+  font-weight: 900;
+  font-size: clamp(48px, 5.2vw, 100px);
+  line-height: .9;
+  color: var(--marrone);
+}
+.sezione-hero .s-h-ultima {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+}
+.sezione-hero .s-h-swoosh {
+  position: absolute;
+  left: -.115em;
+  top: .22em;
+  width: 4.8em;
+  height: .67em;
+  z-index: -1;
+  overflow: visible;
+}
+.sezione-hero .s-h-sub {
+  margin: 47px 0 0;
+  font-weight: 500;
+  font-size: clamp(22px, 1.98vw, 38px);
+  line-height: 1.05;
+  color: var(--rosa);
+  max-width: 629px;
+}
+.sezione-hero .bottone { margin-top: 77px; }
+
+
+/* =========================================================================
+   CATEGORIE
+   ========================================================================= */
+.sezione-categorie { padding-top: var(--spazio); }
+.sezione-categorie .s-c-lista { margin-top: clamp(28px, 2.8vw, 54px); }
+.sezione-categorie .s-c-card {
+  height: 254px;
+  background: var(--marrone);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 20px;
+  transition: background .25s ease;
+}
+.sezione-categorie .s-c-card:hover { background: #4E383B; }
+.sezione-categorie .s-c-icona img {
+  height: 90px;
+  width: auto;
+  max-width: 128px;
+  display: block;
+}
+.sezione-categorie .s-c-riga {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.sezione-categorie .s-c-nome {
+  font-weight: 700;
+  font-size: clamp(20px, 1.56vw, 30px);
+  line-height: 1;
+  color: var(--white);
+}
+.sezione-categorie .s-c-freccia {
+  flex: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--rosa-chiaro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sezione-categorie .s-c-freccia img {
+  width: 34px;
+  height: auto;
+  display: block;
+  transform: rotate(-90deg);
+}
+
+/* =========================================================================
+   BEST SELLER
+   ========================================================================= */
+.sezione-bestseller { padding-top: clamp(64px, 5.2vw, 100px); }
+.sezione-bestseller .s-bs-lista { margin-top: clamp(28px, 3vw, 59px); }
+.prodotto-card .pc-img {
+  display: block;
+  aspect-ratio: 420 / 436;
+  background: var(--rosa-chiaro);
+  overflow: hidden;
+}
+.prodotto-card .pc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.prodotto-card:hover .pc-img img { transform: scale(1.04); }
+.prodotto-card .pc-dati {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 1;
+}
+.prodotto-card .pc-cat { margin: 0; }
+.prodotto-card .pc-nome { margin: 0; font-weight: 700; font-size: 23px; }
+.prodotto-card .pc-nome a { color: var(--testo); }
+.prodotto-card .pc-prezzo { margin: 0; }
+.prodotto-card .pc-colori { display: flex; gap: 6px; margin-top: 14px; }
+.prodotto-card .pc-colori span {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+}
+
+/* Barra di avanzamento sotto la griglia. */
+.sezione-bestseller .s-bs-barra {
+  position: relative;
+  margin-top: 28px;
+  height: 3px;
+  background: var(--rosa-scuro);
+}
+.sezione-bestseller .s-bs-barra span {
+  position: absolute;
+  left: 0;
+  top: -3px;
+  width: 25%;
+  height: 8px;
+  background: var(--rosa-scuro);
+}
+
+/* =========================================================================
+   SERVIZI
+   ========================================================================= */
+.sezione-servizi {
+  margin-top: 75px;
+  background: var(--rosa-chiaro);
+}
+.sezione-servizi .s-sv-voce {
+  position: relative;
+  min-height: 254px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 40px 16px;
+  color: var(--white);
+  text-align: center;
+}
+.sezione-servizi .s-sv-voce:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25%;
+  bottom: 12%;
+  width: 1.5px;
+  background: var(--rosa-scuro);
+}
+.sezione-servizi [class*="col-"]:first-child .s-sv-voce:before { display: none; }
+.sezione-servizi .s-sv-icona img {
+  height: 71px;
+  width: auto;
+  max-width: 97px;
+  display: block;
+}
+.sezione-servizi .s-sv-titolo {
+  display: block;
+  font-weight: 700;
+  font-size: clamp(16px, 1.2vw, 23px);
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--marrone);
+}
+.sezione-servizi .s-sv-testo {
+  display: block;
+  font-weight: 500;
+  font-size: clamp(16px, 1.2vw, 23px);
+  line-height: 1.15;
+}
+a.s-sv-voce:hover .s-sv-titolo { color: var(--white); }
+
+/* =========================================================================
+   PROGETTI — carosello a scorrimento con snap
+   ========================================================================= */
+.sezione-progetti {
+  position: relative;
+  /* L'arco sta sotto la pagina: in basso continua dietro la sezione
+     successiva, di lato si taglia al bordo (clip, non hidden: hidden
+     taglierebbe anche in verticale). */
+  overflow-x: clip;
+  padding: clamp(64px, 5.3vw, 102px) 0 clamp(80px, 8vw, 160px);
+}
+.sezione-progetti .s-pg-testa { position: relative; z-index: 1; }
+.sezione-progetti .s-pg-fascia {
+  position: relative;
+  margin-top: clamp(32px, 3.6vw, 69px);
+  padding-bottom: clamp(20px, 3vw, 60px);
+}
+.sezione-progetti .s-pg-griglia {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: clamp(10px, 1.04vw, 20px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.sezione-progetti .s-pg-griglia::-webkit-scrollbar { display: none; }
+.sezione-progetti .s-pg-foto {
+  flex: none;
+  width: clamp(280px, 32.66vw, 627px);
+  aspect-ratio: 627 / 590;
+  scroll-snap-align: start;
+  background: var(--rosa-chiaro);
+  margin: 0;
+  overflow: hidden;
+}
+.sezione-progetti .s-pg-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* L'arco decorativo dietro al carosello. */
+.sezione-progetti .s-pg-arco {
+  position: absolute;
+  left: -4.1vw;
+  top: -17.66vw;
+  width: 121.42vw;
+  height: 63.09vw;
+  opacity: .697;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================================================
+   TUTORIAL E CORSI
+   ========================================================================= */
+/* Sopra l'arco dei progetti, che le passa dietro. */
+.sezione-corsiconsigli {
+  position: relative;
+  z-index: 1;
+  padding: var(--spazio) 0 clamp(96px, 7.5vw, 144px);
+}
+.sezione-corsiconsigli .s-cc-img {
+  margin-top: 18px;
+  aspect-ratio: 859 / 380;
+  background: var(--marrone);
+  overflow: hidden;
+}
+.sezione-corsiconsigli .s-cc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.sezione-corsiconsigli .s-cc-testo {
+  margin: 39px 0 0;
+  white-space: pre-line;
+  text-wrap: pretty;
+}
+.sezione-corsiconsigli .bottone { margin-top: 36px; }
+
+/* =========================================================================
+   CHI SONO
+   ========================================================================= */
+.sezione-chisono {
+  background: var(--crema);
+  padding: clamp(56px, 5.8vw, 112px) 0;
+}
+.sezione-chisono .s-ch-foto {
+  aspect-ratio: 493 / 543;
+  overflow: hidden;
+}
+.sezione-chisono .s-ch-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 100%;
+  display: block;
+}
+.sezione-chisono .s-ch-testo {
+  font-weight: 400;
+  font-size: clamp(17px, 1.4vw, 27px);
+  line-height: 1.15;
+  color: var(--testo-chi);
+}
+.sezione-chisono .s-ch-testo p { margin: 0; }
+.sezione-chisono .s-ch-testo p + p { margin-top: 0; }
+.sezione-chisono .s-ch-testo p:last-child { margin-top: 1.15em; }
+
+/* =========================================================================
+   RECENSIONI — nel design e' un'immagine unica
+   ========================================================================= */
+.sezione-recensioni { background: var(--white); }
+.sezione-recensioni > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+/* Versione a card (quando non c'e' l'immagine): testo vero, selezionabile
+   e indicizzabile, con l'aspetto delle schede Google del design. */
+.sezione-recensioni-card { padding: var(--spazio) 0; }
+.sezione-recensioni .s-r-card {
+  height: 100%;
+  border: 1px solid #E6E0E0;
+  border-radius: 10px;
+  background: var(--white);
+  padding: 22px 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.04);
+}
+.sezione-recensioni .s-r-testa {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.sezione-recensioni .s-r-nome {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--testo);
+}
+/* La G di Google nei suoi quattro colori. */
+.sezione-recensioni .s-r-google {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  font: 700 17px var(--font-base);
+  line-height: 20px;
+  text-align: center;
+  background: conic-gradient(from -45deg, #EA4335 0 25%, #FBBC05 0 50%, #34A853 0 75%, #4285F4 0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.sezione-recensioni .s-r-stelle {
+  color: #FBBC05;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  margin: 0 0 10px;
+}
+.sezione-recensioni .s-r-testo {
+  font-size: .95rem;
+  line-height: 1.45;
+  color: var(--testo);
+  margin: 0;
+}
+/* Le recensioni lunghe non devono allungare tutta la riga: 8 righe, il
+   testo completo e' su Google ("Leggile tutte"). */
+.sezione-recensioni .s-r-testo {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  line-clamp: 8;
+  overflow: hidden;
+}
+a.s-r-nome:hover { color: var(--rosa); }
+
+/* Voto medio e link alla scheda Google, sotto le card. */
+.sezione-recensioni .s-r-sintesi {
+  margin: 28px 0 0;
+  text-align: center;
+  font-size: 17px;
+  color: var(--testo-chi);
+}
+.sezione-recensioni .s-r-sintesi .s-r-stelle { margin: 0; letter-spacing: 0; }
+.sezione-recensioni .s-r-sintesi a { text-decoration: underline; }
+
+/* =========================================================================
+   RITMO VERTICALE — uguale su tutte le pagine
+   ========================================================================= */
+
+/* Stessa distanza fra una sezione e l'altra che c'e' in home. */
+.sezione { padding-top: var(--spazio); }
+
+/* La prima sezione di una pagina interna parte subito sotto l'header, che
+   ha gia' il suo padding inferiore: come l'hero in home. */
+.sezione-pagina { padding-top: 0; }
+
+/* Ogni pagina finisce alla stessa distanza dal footer. In home l'ultima
+   sezione (recensioni) ha gia' questo spazio come padding. */
+#content { padding-bottom: var(--spazio); }
+.home #content { padding-bottom: 0; }
+
+/* =========================================================================
+   TESTATA DI PAGINA
+   ========================================================================= */
+.testata-pagina { margin-bottom: clamp(28px, 3vw, 59px); }
+/* Quando l'h1 e' il sopratitolo (titoli SEO lunghi) resta piccolo e
+   maiuscolo come nelle sezioni della home. */
+h1.sopratitolo { font-size: clamp(18px, 1.56vw, 30px); }
+.testata-pagina .testata-intro {
+  margin-top: 24px;
+  max-width: 900px;
+}
+.testata-pagina .testata-intro p { margin: 0 0 .6em; }
+
+/* Pagine interne: testi un punto sotto la home, titoli piu' contenuti. */
+body:not(.home) .testo-corrente { font-size: clamp(17px, 1.35vw, 26px); }
+body:not(.home) .testata-pagina .titolo-grande { font-size: clamp(44px, 4.4vw, 84px); }
+body:not(.home) .testata-pagina .titolo-medio  { font-size: clamp(34px, 3.4vw, 64px); }
+
+/* Righe di card piu' staccate fra loro. */
+.griglia-card { --bs-gutter-y: clamp(40px, 3.6vw, 68px); }
+
+/* =========================================================================
+   CARD — famiglia unica (prodotti e post)
+   La base .prodotto-card sta nella sezione best seller della home.
+   ========================================================================= */
+.prodotto-card .pc-prezzo del { opacity: .5; margin-right: 6px; }
+.prodotto-card .pc-prezzo ins { text-decoration: none; }
+.prodotto-card .pc-colori span { box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08); }
+
+.post-card .pc-estratto {
+  margin: 12px 0 0;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.25;
+  color: var(--testo-chi);
+}
+
+.pagina-vuota { margin: 0; color: var(--testo-chi); }
+
+/* =========================================================================
+   SHOP
+   ========================================================================= */
+.filtro-pillole {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: clamp(28px, 3vw, 59px);
+}
+.filtro-pillole a {
+  display: inline-flex;
+  align-items: center;
+  height: 47px;
+  padding: 0 28px;
+  border: 1.5px solid var(--rosa);
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--marrone);
+  transition: background .25s ease, color .25s ease;
+}
+.filtro-pillole a:hover,
+.filtro-pillole a.attiva {
+  background: var(--rosa);
+  color: var(--white);
+}
+
+.paginazione {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: clamp(40px, 4vw, 76px);
+}
+.paginazione .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 47px;
+  height: 47px;
+  padding: 0 14px;
+  border: 1.5px solid var(--rosa-chiaro);
+  border-radius: 24px;
+  font-weight: 700;
+  color: var(--marrone);
+}
+.paginazione .page-numbers.current,
+.paginazione a.page-numbers:hover {
+  background: var(--rosa);
+  border-color: var(--rosa);
+  color: var(--white);
+}
+.paginazione .dots { border-color: transparent; }
+
+/* =========================================================================
+   TESTO LUNGO — pagine legali, post, descrizioni prodotto
+   Stessa famiglia di "Ciao, sono Ivana." ma a misura di lettura.
+   ========================================================================= */
+.testo-lungo {
+  max-width: 900px;
+  font-weight: 400;
+  font-size: clamp(15px, 1.1vw, 19px);
+  line-height: 1.55;
+  color: var(--testo-chi);
+}
+.testo-lungo p,
+.testo-lungo ul,
+.testo-lungo ol { margin: 0 0 1em; }
+/* I contenuti importati da Divi portano font, dimensioni e colori inline
+   sugli span (style="font-family: verdana; color: #666"): l'inline batte il
+   tema e il testo esce in un altro carattere. Qui si rimette tutto in
+   ereditarieta'. !important e' l'unico modo di vincere su style="". */
+.testo-lungo [style*="font-family"] { font-family: inherit !important; }
+.testo-lungo [style*="font-size"]   { font-size: inherit !important; }
+.testo-lungo [style*="line-height"] { line-height: inherit !important; }
+.testo-lungo [style*="color"]:not(a) { color: inherit !important; }
+.testo-lungo font { font-family: inherit; font-size: inherit; color: inherit; }
+
+/* L'ultimo elemento non deve spingere: lo spazio dal footer e' --spazio. */
+.testo-lungo > :last-child { margin-bottom: 0; }
+.testo-lungo ul { padding-left: 1.2em; list-style: disc; }
+.testo-lungo ol { padding-left: 1.2em; list-style: decimal; }
+.testo-lungo li { margin-bottom: .35em; }
+.testo-lungo h2 {
+  margin: 1.4em 0 .5em;
+  font-weight: 700;
+  font-size: clamp(26px, 1.9vw, 36px);
+  line-height: 1.15;
+  color: var(--rosa);
+}
+.testo-lungo h3,
+.testo-lungo h4 {
+  margin: 1.3em 0 .4em;
+  font-weight: 700;
+  font-size: clamp(19px, 1.3vw, 24px);
+  line-height: 1.2;
+  color: var(--marrone);
+}
+.testo-lungo a { color: var(--marrone); text-decoration: underline; }
+.testo-lungo a:hover { color: var(--rosa); }
+.testo-lungo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.2em 0;
+}
+/* Indirizzi scritti per esteso nel testo: vanno a capo invece di sbordare. */
+.testo-lungo a { overflow-wrap: anywhere; }
+
+/* Immagini e gallerie recuperate dai moduli Divi (ivanazanetti_divi_immagini). */
+.testo-lungo .post-immagine { margin: 1.6em 0; }
+.testo-lungo .post-immagine img { margin: 0; border-radius: 6px; }
+.testo-lungo .post-galleria { margin: 1.6em 0 3.2em; }
+.testo-lungo .post-galleria .pg-foto {
+  width: 100%;
+  margin: 0;
+  background: var(--crema);
+}
+.testo-lungo .post-galleria img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  margin: 0;
+}
+.testo-lungo .post-galleria .flickity-viewport { border-radius: 6px; }
+.testo-lungo .post-galleria .flickity-button {
+  width: 46px;
+  height: 46px;
+  background: var(--rosa);
+  color: var(--white);
+  transition: background .25s ease;
+}
+.testo-lungo .post-galleria .flickity-button:hover { background: var(--marrone); }
+.testo-lungo .post-galleria .flickity-button:focus { box-shadow: 0 0 0 3px var(--rosa-chiaro); }
+.testo-lungo .post-galleria .flickity-page-dots { bottom: -28px; }
+.testo-lungo .post-galleria .flickity-page-dots .dot { background: var(--rosa-chiaro); opacity: 1; }
+.testo-lungo .post-galleria .flickity-page-dots .dot.is-selected { background: var(--rosa); }
+
+.testo-lungo table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.2em;
+  font-size: .9em;
+}
+.testo-lungo th,
+.testo-lungo td {
+  border: 1px solid var(--rosa-chiaro);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+/* =========================================================================
+   POST SINGOLO
+   ========================================================================= */
+.post-cover {
+  aspect-ratio: 859 / 380;
+  background: var(--marrone);
+  overflow: hidden;
+  margin-bottom: clamp(28px, 3vw, 59px);
+}
+.post-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.post-piede { margin-top: clamp(40px, 4vw, 76px); }
+
+/* Icone delle caratteristiche del corso (shortcode sdw_icona_corsi_*). */
+.p-icona {
+  width: 28px;
+  height: 28px;
+  fill: var(--rosa);
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* --- Come iscriversi (shortcode dentro i post dei corsi) ----------------- */
+.sezione-iscriversi {
+  background: var(--crema);
+  padding: clamp(28px, 3vw, 56px);
+  margin: clamp(40px, 4vw, 76px) 0;
+}
+.sezione-iscriversi .s-i-titolo {
+  margin: 0 0 24px;
+  font-weight: 700;
+  font-size: clamp(30px, 2.4vw, 46px);
+  line-height: 1.1;
+  color: var(--rosa);
+}
+.sezione-iscriversi .s-i-passo h3 {
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--marrone);
+}
+.sezione-iscriversi .s-i-passo p { margin: 0; font-size: 17px; line-height: 1.3; }
+.sezione-iscriversi .s-i-freccia {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-top: 16px;
+  border-radius: 50%;
+  background: var(--rosa-chiaro);
+}
+.sezione-iscriversi .s-i-freccia img { width: 30px; height: auto; margin: 0; }
+
+/* =========================================================================
+   PUNTO VENDITA — stessa impaginazione di "Chi sono"
+   ========================================================================= */
+.pv-foto {
+  aspect-ratio: 493 / 543;
+  background: var(--rosa-chiaro);
+  overflow: hidden;
+}
+.pv-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pv-testo { color: var(--testo-chi); }
+.pv-testo p { margin: 0 0 .8em; }
+.pv-testo a { text-decoration: underline; }
+
+.pv-info { margin-top: clamp(20px, 2vw, 40px); }
+
+/* Stesso blocco dati del footer. */
+.blocco-info {
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.35;
+}
+.blocco-info h4 { margin: 0 0 2px; font-weight: 700; font-size: 20px; }
+.blocco-info p { margin: 0; }
+.blocco-info a { color: var(--testo); }
+.blocco-info a:hover { color: var(--rosa); }
+
+.sezione-mappa .mappa iframe {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 30vw, 540px);
+  border: 0;
+}
+
+/* =========================================================================
+   SCHEDA PRODOTTO
+   Il CSS di WooCommerce mette galleria e riepilogo a meta' (float, 48%) e le
+   miniature al 25%, con selettori tipo ".woocommerce #content div.product":
+   l'id #content li rende piu' forti di qualsiasi regola a sole classi, per
+   questo qui ogni selettore parte da #content.
+   ========================================================================= */
+#content .woocommerce div.product.scheda-prodotto div.images,
+#content .woocommerce div.product.scheda-prodotto div.summary {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+.scheda-prodotto .woocommerce-product-gallery { background: var(--rosa-chiaro); }
+.scheda-prodotto .woocommerce-product-gallery__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#content .woocommerce div.product.scheda-prodotto .flex-control-thumbs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  background: var(--sfondo);
+}
+#content .woocommerce div.product.scheda-prodotto .flex-control-thumbs li {
+  width: auto;
+  float: none;
+  margin: 0;
+}
+#content .woocommerce div.product.scheda-prodotto .flex-control-thumbs img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  opacity: .55;
+}
+#content .woocommerce div.product.scheda-prodotto .flex-control-thumbs img.flex-active,
+#content .woocommerce div.product.scheda-prodotto .flex-control-thumbs img:hover { opacity: 1; }
+
+#content .woocommerce div.product.scheda-prodotto .product_title {
+  margin: 8px 0 0;
+  font-weight: 700;
+  font-size: clamp(36px, 3.4vw, 66px);
+  line-height: 1.05;
+  color: var(--rosa);
+}
+#content .woocommerce div.product.scheda-prodotto p.price,
+#content .woocommerce div.product.scheda-prodotto span.price {
+  display: block;
+  margin: 24px 0 0;
+  font-weight: 700;
+  font-size: clamp(24px, 1.8vw, 34px);
+  color: var(--marrone);
+}
+#content .woocommerce div.product.scheda-prodotto .price del { opacity: .5; }
+#content .woocommerce div.product.scheda-prodotto .price ins { text-decoration: none; }
+
+.scheda-prodotto .woocommerce-product-details__short-description {
+  margin-top: 24px;
+  font-weight: 400;
+  font-size: clamp(16px, 1.15vw, 21px);
+  line-height: 1.35;
+  color: var(--testo-chi);
+}
+
+#content .woocommerce div.product.scheda-prodotto form.cart { margin: 32px 0 0; }
+#content .woocommerce div.product.scheda-prodotto form.cart:not(.variations_form),
+#content .woocommerce div.product.scheda-prodotto .woocommerce-variation-add-to-cart {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+#content .woocommerce div.product.scheda-prodotto form.cart div.quantity { float: none; margin: 0; }
+#content .woocommerce div.product.scheda-prodotto .quantity .qty {
+  width: 90px;
+  height: 47px;
+  border: 1.5px solid var(--rosa-chiaro);
+  border-radius: 24px;
+  background: var(--white);
+  text-align: center;
+  font: 700 18px var(--font-base);
+  color: var(--marrone);
+}
+/* Il bottone "Aggiungi al carrello" e' un .bottone del tema. */
+#content .woocommerce div.product.scheda-prodotto .single_add_to_cart_button,
+#content .woocommerce div.product.scheda-prodotto .single_add_to_cart_button.alt {
+  float: none;
+  height: 47px;
+  padding: 0 40px;
+  border: 0;
+  border-radius: 24px;
+  background: var(--rosa);
+  color: var(--white);
+  font: 700 18px var(--font-base);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  transition: background .25s ease;
+}
+#content .woocommerce div.product.scheda-prodotto .single_add_to_cart_button:hover { background: var(--marrone); }
+
+#content .woocommerce div.product.scheda-prodotto table.variations { margin: 0 0 18px; }
+#content .woocommerce div.product.scheda-prodotto table.variations th.label,
+#content .woocommerce div.product.scheda-prodotto table.variations td.label {
+  font-weight: 700;
+  color: var(--marrone);
+  padding-right: 14px;
+}
+#content .woocommerce div.product.scheda-prodotto table.variations select {
+  height: 47px;
+  min-width: 200px;
+  padding: 0 18px;
+  border: 1.5px solid var(--rosa-chiaro);
+  border-radius: 24px;
+  background-color: var(--white);
+  font: 500 16px var(--font-base);
+  color: var(--testo);
+}
+
+/* Bottoni delle varianti (plugin Variation Swatches): pillole come il resto. */
+.scheda-prodotto .variable-items-wrapper .variable-item.button-variable-item {
+  min-width: 47px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 24px;
+  box-shadow: 0 0 0 1.5px var(--rosa-chiaro);
+  background: var(--white);
+  font: 700 15px var(--font-base);
+  color: var(--marrone);
+}
+.scheda-prodotto .variable-items-wrapper .variable-item.button-variable-item:hover,
+.scheda-prodotto .variable-items-wrapper .variable-item.button-variable-item.selected {
+  box-shadow: 0 0 0 1.5px var(--rosa);
+  background: var(--rosa);
+  color: var(--white);
+}
+.scheda-prodotto .variable-items-wrapper .variable-item .variable-item-span { padding: 0; }
+.scheda-prodotto .reset_variations { font-size: 14px; color: var(--marrone); }
+
+.scheda-prodotto .product_meta {
+  margin-top: 28px;
+  font-size: 16px;
+  color: var(--testo-chi);
+}
+.scheda-prodotto .product_meta > span { display: block; margin-bottom: 4px; }
+.scheda-prodotto .product_meta a { color: var(--marrone); text-decoration: underline; }
+
+.scheda-descrizione { margin-top: var(--spazio); }
+.scheda-descrizione .titolo-medio { margin: 0 0 24px; }
+
+/* Avvisi WooCommerce (es. "aggiunto al carrello") nella palette del sito. */
+.woocommerce .woocommerce-message,
+.woocommerce .woocommerce-info,
+.woocommerce .woocommerce-error {
+  border-top-color: var(--rosa);
+  background: var(--white);
+  color: var(--testo);
+}
+.woocommerce .woocommerce-message::before,
+.woocommerce .woocommerce-info::before { color: var(--rosa); }
+.woocommerce .woocommerce-message .button {
+  border-radius: 24px;
+  background: var(--rosa);
+  color: var(--white);
+}
+
+/* =========================================================================
+   CARRELLO, CHECKOUT, ACCOUNT
+   Il CSS di WooCommerce ha selettori tipo ".woocommerce a.button.alt": qui
+   si parte da .pagina-negozio .woocommerce per stare sopra.
+   ========================================================================= */
+.pagina-negozio .woocommerce { color: var(--testo); font-size: 17px; }
+.pagina-negozio .woocommerce a { color: var(--marrone); }
+.pagina-negozio .woocommerce a:hover { color: var(--rosa); }
+
+/* --- bottoni: tutti pillole come nel resto del sito ---------------------- */
+.pagina-negozio .woocommerce .button,
+.pagina-negozio .woocommerce button.button,
+.pagina-negozio .woocommerce a.button,
+.pagina-negozio .woocommerce input.button,
+.pagina-negozio .woocommerce #place_order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 47px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 24px;
+  background: var(--rosa);
+  color: var(--white);
+  font: 700 16px var(--font-base);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  transition: background .25s ease;
+}
+.pagina-negozio .woocommerce .button:hover,
+.pagina-negozio .woocommerce #place_order:hover { background: var(--marrone); color: var(--white); }
+.pagina-negozio .woocommerce .button:disabled,
+.pagina-negozio .woocommerce .button[disabled] { opacity: .45; padding: 0 32px; }
+/* "Aggiorna carrello" e simili: secondari, a bordo. */
+.pagina-negozio .woocommerce button[name="update_cart"],
+.pagina-negozio .woocommerce button[name="apply_coupon"] {
+  background: transparent;
+  border: 1.5px solid var(--rosa);
+  color: var(--marrone);
+}
+.pagina-negozio .woocommerce button[name="update_cart"]:hover,
+.pagina-negozio .woocommerce button[name="apply_coupon"]:hover { background: var(--rosa); color: var(--white); }
+
+/* --- campi --------------------------------------------------------------- */
+.pagina-negozio .woocommerce input.input-text,
+.pagina-negozio .woocommerce select,
+.pagina-negozio .woocommerce textarea,
+.pagina-negozio .woocommerce .select2-container .select2-selection--single {
+  width: 100%;
+  height: 45px;
+  padding: 0 18px;
+  border: 1px solid var(--rosa-chiaro);
+  border-radius: 23px;
+  background: var(--white);
+  font: 400 16px var(--font-base);
+  color: var(--testo);
+}
+.pagina-negozio .woocommerce textarea,
+.pagina-negozio .woocommerce form .form-row textarea { height: 110px; padding: 12px 18px; border: 1px solid var(--rosa-chiaro); border-radius: 16px; }
+.pagina-negozio .woocommerce .select2-container .select2-selection--single .select2-selection__rendered { line-height: 43px; padding: 0; }
+.pagina-negozio .woocommerce .select2-container .select2-selection--single .select2-selection__arrow { height: 43px; right: 12px; }
+.pagina-negozio .woocommerce input:focus,
+.pagina-negozio .woocommerce textarea:focus { outline: 0; border-color: var(--rosa); }
+.pagina-negozio .woocommerce form .form-row { margin: 0 0 14px; padding: 0; }
+.pagina-negozio .woocommerce form .form-row label { font-weight: 500; margin-bottom: 4px; }
+.pagina-negozio .woocommerce form .form-row .required { color: var(--rosa); text-decoration: none; }
+.pagina-negozio .woocommerce .quantity .qty {
+  width: 72px;
+  height: 40px;
+  padding: 0 8px;
+  text-align: center;
+}
+
+/* --- carrello: tabella a sinistra, totali a destra ------------------------ */
+.woocommerce-cart .pagina-negozio .woocommerce {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 0 clamp(32px, 4vw, 72px);
+  align-items: start;
+}
+.woocommerce-cart .pagina-negozio .woocommerce > .woocommerce-notices-wrapper { grid-column: 1 / -1; }
+.woocommerce-cart .pagina-negozio .woocommerce .cart-collaterals { width: auto; }
+.woocommerce-cart .pagina-negozio .woocommerce .cart-collaterals .cart_totals { float: none; width: auto; }
+
+.pagina-negozio .woocommerce table.shop_table {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  border-collapse: collapse;
+}
+.pagina-negozio .woocommerce table.shop_table th {
+  padding: 0 12px 14px;
+  border: 0;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--marrone);
+}
+.pagina-negozio .woocommerce table.shop_table td {
+  padding: 20px 12px;
+  border: 0;
+  border-top: 1px solid var(--rosa-chiaro);
+  vertical-align: middle;
+}
+.pagina-negozio .woocommerce table.cart img { width: 96px; height: 96px; object-fit: cover; border-radius: 6px; }
+.pagina-negozio .woocommerce table.cart .product-name a { font-weight: 700; text-decoration: none; color: var(--testo); }
+.pagina-negozio .woocommerce table.cart .product-name a:hover { color: var(--rosa); }
+.pagina-negozio .woocommerce table.cart td.actions { padding-top: 24px; text-align: right; }
+/* La X per togliere un prodotto: cerchio discreto, rosa all'hover. */
+.pagina-negozio .woocommerce a.remove {
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  border: 1px solid var(--rosa-chiaro);
+  border-radius: 50%;
+  color: var(--marrone) !important;
+  font-size: 20px;
+  font-weight: 400;
+}
+.pagina-negozio .woocommerce a.remove:hover { background: var(--rosa); border-color: var(--rosa); color: var(--white) !important; }
+
+/* Riquadri bianchi: totali del carrello, riepilogo dell'ordine, pagamento. */
+.pagina-negozio .woocommerce .cart_totals,
+.woocommerce-checkout .pagina-negozio .woocommerce-checkout-review-order,
+.pagina-negozio .woocommerce-checkout #payment {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+}
+.pagina-negozio .woocommerce .cart_totals { padding: 28px; }
+.pagina-negozio .woocommerce .cart_totals h2,
+.pagina-negozio .woocommerce-checkout h3 {
+  margin: 0 0 18px;
+  font-weight: 700;
+  font-size: clamp(24px, 1.8vw, 32px);
+  color: var(--rosa);
+}
+.pagina-negozio .woocommerce .cart_totals table.shop_table th { padding: 16px 0; text-transform: none; letter-spacing: 0; font-size: 16px; border-top: 1px solid var(--rosa-chiaro); }
+.pagina-negozio .woocommerce .cart_totals table.shop_table td { padding: 16px 0; text-align: right; }
+.pagina-negozio .woocommerce .cart_totals tr:first-child th,
+.pagina-negozio .woocommerce .cart_totals tr:first-child td { border-top: 0; }
+.pagina-negozio .woocommerce .order-total strong { font-size: 22px; color: var(--marrone); }
+.pagina-negozio .woocommerce .includes_tax { display: block; font-size: 13px; color: var(--testo-chi); }
+.pagina-negozio .woocommerce ul#shipping_method { margin: 0; }
+.pagina-negozio .woocommerce .woocommerce-shipping-destination,
+.pagina-negozio .woocommerce .woocommerce-shipping-calculator { font-size: 15px; margin: 6px 0 0; }
+.pagina-negozio .woocommerce .wc-proceed-to-checkout { padding: 20px 0 0; }
+.pagina-negozio .woocommerce .wc-proceed-to-checkout a.checkout-button {
+  width: 100%;
+  height: 54px;
+  margin: 0;
+  font-size: 17px;
+}
+
+/* --- checkout: dati a sinistra, riepilogo e pagamento a destra ------------ */
+/* Righe: la prima e' alta quanto il titolo "Il tuo ordine", la seconda
+   prende il resto; i dati cliente occupano entrambe, cosi' il riepilogo
+   sta subito sotto il suo titolo e non in fondo al modulo. */
+.woocommerce-checkout .pagina-negozio form.checkout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 460px;
+  grid-template-rows: auto 1fr;
+  gap: 0 clamp(32px, 4vw, 72px);
+  align-items: start;
+}
+.woocommerce-checkout .pagina-negozio form.checkout > * { grid-column: 1; }
+.woocommerce-checkout .pagina-negozio form.checkout #customer_details { grid-row: 1 / span 2; }
+.woocommerce-checkout .pagina-negozio form.checkout #order_review_heading { grid-column: 2; grid-row: 1; margin-top: 0; }
+.woocommerce-checkout .pagina-negozio form.checkout #order_review { grid-column: 2; grid-row: 2; position: sticky; top: 24px; }
+.woocommerce-checkout .pagina-negozio #customer_details .col-1,
+.woocommerce-checkout .pagina-negozio #customer_details .col-2 { float: none; width: 100%; }
+.woocommerce-checkout .pagina-negozio #customer_details .col-2 { margin-top: 24px; }
+.woocommerce-checkout .pagina-negozio .woocommerce-checkout-review-order { padding: 24px 28px 0; }
+.woocommerce-checkout .pagina-negozio .woocommerce-checkout-review-order table.shop_table th,
+.woocommerce-checkout .pagina-negozio .woocommerce-checkout-review-order table.shop_table td { padding: 14px 0; font-size: 16px; text-transform: none; letter-spacing: 0; }
+.woocommerce-checkout .pagina-negozio .woocommerce-checkout-review-order table.shop_table td:last-child,
+.woocommerce-checkout .pagina-negozio .woocommerce-checkout-review-order table.shop_table th:last-child { text-align: right; }
+.pagina-negozio .woocommerce-checkout #payment { margin: 24px -28px 0; border-radius: 0 0 10px 10px; background: var(--crema); }
+.pagina-negozio .woocommerce-checkout #payment ul.payment_methods { padding: 22px 28px; border-bottom: 1px solid var(--rosa-chiaro); }
+.pagina-negozio .woocommerce-checkout #payment div.payment_box { background: var(--white); border-radius: 8px; color: var(--testo); font-size: 15px; }
+.pagina-negozio .woocommerce-checkout #payment div.payment_box::before { border-bottom-color: var(--white); }
+.pagina-negozio .woocommerce-checkout #payment div.form-row { padding: 22px 28px; }
+.pagina-negozio .woocommerce-checkout #place_order { width: 100%; height: 54px; font-size: 17px; float: none; }
+/* Testo delle condizioni di vendita che si apre nel checkout. */
+.pagina-negozio .woocommerce-terms-and-conditions { background: var(--white) !important; border-radius: 8px; font-size: 14px; }
+.pagina-negozio .woocommerce-terms-and-conditions h2 { font-size: 18px; }
+
+/* =========================================================================
+   404 — testata delle pagine interne, due uscite e le categorie della home
+   ========================================================================= */
+.sezione-404 .testata-pagina { margin-bottom: 0; }
+.s-404-azioni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: clamp(28px, 2.6vw, 48px);
+}
+.s-404-categorie .s-c-lista { margin-top: clamp(20px, 1.8vw, 34px); }
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+#footer {
+  background: var(--white);
+  padding: clamp(40px, 2.6vw, 50px) 0 42px;
+}
+
+/* Stesso contenitore delle altre sezioni: senza il padding laterale le .row
+   di Bootstrap, che hanno margini negativi, sbordano di 12px e creano lo
+   scroll orizzontale. */
+#footer .f-interno {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+#footer .f-dati {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+#footer .f-marchi {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 3.8vw, 74px);
+  flex-wrap: wrap;
+}
+#footer .f-logo img { width: 420px; max-width: 70%; height: auto; display: block; }
+#footer .f-badge img { width: 133px; height: auto; display: block; }
+
+#footer .f-blocco {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.35;
+}
+#footer .f-blocco h4 {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 2px;
+}
+#footer .f-blocco p { margin: 0; }
+/* L'indirizzo sta su una riga sola e fa da blocco a se': gli serve aria
+   sotto, se no si attacca a "Orari:". */
+#footer .f-blocchi > .col-12:first-child { margin-bottom: 6px; }
+
+/* "ivanazanetti_ilfilodiarianna" e' un unico token senza punti di
+   interruzione naturali: con overflow-wrap si spezzava a meta' parola.
+   Si rimpicciolisce quel tanto che basta a stare nella colonna. */
+#footer .f-s-handle {
+  margin: 0 0 12px !important;
+  font-size: 17px;
+}
+#footer .f-dati a { color: var(--testo); }
+#footer .f-dati a:hover { color: var(--rosa); }
+
+#footer .f-social-icone {
+  display: flex;
+  align-items: center;
+  gap: 18.6px;
+}
+#footer .f-s-link svg { height: 23px; width: auto; fill: var(--testo); display: block; }
+#footer .f-s-link:hover svg { fill: var(--rosa); }
+
+#footer .f-paypal img { width: 120px; height: auto; display: block; }
+
+#footer .f-b-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 34px;
+  font-weight: 400;
+  font-size: 18px;
+}
+#footer .f-b-menu a { color: var(--testo); text-decoration: underline; }
+#footer .f-b-menu a:hover { color: var(--rosa); }
+
+/* --- form ---------------------------------------------------------------- */
+#footer .f-f-titolo {
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: clamp(36px, 2.86vw, 55px);
+  line-height: 1.1;
+  color: var(--rosa);
+}
+#footer .f-form input[type="text"],
+#footer .f-form input[type="email"],
+#footer .f-form input[type="tel"],
+#footer .f-form textarea {
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  border: 1px solid var(--rosa-chiaro);
+  border-radius: 23px;
+  background: var(--white);
+  font: 400 17px var(--font-base);
+  color: var(--testo);
+  outline: none;
+}
+#footer .f-form textarea {
+  height: auto;
+  min-height: 190px;
+  padding: 16px 20px;
+  resize: vertical;
+}
+#footer .f-form input::placeholder,
+#footer .f-form textarea::placeholder { color: var(--testo); opacity: .55; }
+
+#footer .f-form .fc-campo { margin-bottom: 14px; }
+#footer .f-form .fc-privacy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 30px;
+}
+#footer .f-form .fc-privacy a { color: var(--testo); text-decoration: underline; }
+#footer .f-form .wpcf7-list-item { margin: 0; }
+#footer .f-form .wpcf7-acceptance label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+#footer .f-form input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: var(--marrone);
+}
+
+#footer .f-form .fc-riga-invio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+#footer .f-form input[type="submit"] {
+  width: 187px;
+  height: 45px;
+  border: 1.5px solid var(--rosa);
+  border-radius: 24px;
+  background: transparent;
+  font: 700 20px var(--font-base);
+  text-transform: uppercase;
+  color: var(--marrone);
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease;
+}
+#footer .f-form input[type="submit"]:hover {
+  background: var(--rosa);
+  color: var(--white);
+}
+
+#footer .f-form .wpcf7-not-valid-tip { font-size: .8rem; color: #C0392B; margin-top: 4px; }
+#footer .f-form .wpcf7-response-output {
+  border: 0;
+  border-left: 3px solid var(--rosa);
+  background: var(--white);
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  font-size: .9rem;
+}
+
+/* --- barra legale -------------------------------------------------------- */
+.f-legale {
+  background: var(--barra);
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+}
+.f-legale .f-interno {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--font-barra);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--testo);
+}
+.f-legale .f-l-link { display: flex; gap: 40px; }
+.f-legale a { color: var(--testo); }
+.f-legale a:hover { color: var(--rosa); }

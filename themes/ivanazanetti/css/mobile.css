@@ -1,0 +1,136 @@
+/* =========================================================================
+   Mobile — breakpoint 991px, lo stesso della logica del design
+   (`window.innerWidth < 992`).
+
+   Il design scala gia' da solo: quasi tutte le misure sono clamp() e le
+   colonne sono Bootstrap. Qui sta solo cio' che clamp non risolve.
+   ========================================================================= */
+
+@media only screen and (max-width: 991px) {
+
+  /* --- header ------------------------------------------------------------ */
+  #header { padding: 20px clamp(16px,4vw,30px) 24px; }
+  /* Logo, SHOP e hamburger su una riga sola. */
+  #header .h-interno { flex-wrap: nowrap; gap: 14px; }
+  #header .logo img { width: 150px; }
+  #menu { margin-left: auto; }
+
+  /* Resta la pillola SHOP col carrello (azione principale) piu' l'hamburger.
+     wp_nav_menu mette l'<ul> dentro un div: niente ">" diretto da #menu. */
+  #menu .menu > li:not(.voce-shop) { display: none; }
+  #menu .voce-shop { height: 40px; }
+  #menu .voce-shop > a:first-child { padding: 0 12px 0 18px; font-size: 15px; }
+  #menu .voce-shop .h-carrello { padding: 0 14px 0 12px; }
+  #menu .voce-shop .h-c-conta { top: -2px; right: 2px; }
+  #header .ham { flex: none; }
+
+  #header .ham {
+    display: block; width: 30px; height: 22px; position: relative;
+    background: none; border: 0; padding: 0; cursor: pointer; z-index: 102;
+  }
+  #header .ham span {
+    position: absolute; left: 0; width: 100%; height: 2px;
+    background: var(--marrone); transition: all .3s ease;
+  }
+  #header .ham span:nth-child(1) { top: 0; }
+  #header .ham span:nth-child(2) { top: 10px; }
+  #header .ham span:nth-child(3) { top: 20px; }
+  #header .ham.aperto span:nth-child(1) { top: 10px; transform: rotate(45deg); }
+  #header .ham.aperto span:nth-child(2) { opacity: 0; }
+  #header .ham.aperto span:nth-child(3) { top: 10px; transform: rotate(-45deg); }
+
+  #fix-menu {
+    display: flex; position: fixed; inset: 0; background: var(--sfondo);
+    align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden; transition: all .3s ease; z-index: 101;
+  }
+  #fix-menu.aperto { opacity: 1; visibility: visible; }
+  #fix-menu ul { list-style: none; margin: 0; padding: 0; text-align: center; }
+  #fix-menu li { margin-bottom: 26px; }
+  #fix-menu a {
+    font-weight: 500; font-size: 1.3rem; text-transform: uppercase;
+    color: var(--marrone);
+  }
+  #fix-menu .voce-shop {
+    display: inline-flex; align-items: center; height: 47px;
+    border-radius: 24px; background: var(--rosa); overflow: hidden;
+  }
+  #fix-menu .voce-shop > a:first-child {
+    padding: 0 16px 0 26px; color: var(--white); font-weight: 700;
+  }
+  body.menu-aperto { overflow: hidden; }
+
+  /* --- carrello e checkout: una colonna ----------------------------------- */
+  .woocommerce-cart .pagina-negozio .woocommerce,
+  .woocommerce-checkout .pagina-negozio form.checkout { display: block; }
+  .woocommerce-cart .pagina-negozio .woocommerce .cart-collaterals { margin-top: 32px; }
+  .woocommerce-checkout .pagina-negozio form.checkout #order_review_heading { margin-top: 32px; }
+  .woocommerce-checkout .pagina-negozio form.checkout #order_review { position: static; }
+  .pagina-negozio .woocommerce table.shop_table_responsive tr td { border-top: 0; padding: 8px 0; }
+  .pagina-negozio .woocommerce table.shop_table_responsive tr { display: block; padding: 14px 0; border-top: 1px solid var(--rosa-chiaro); }
+  .pagina-negozio .woocommerce table.cart td.actions { text-align: left; }
+  .pagina-negozio .woocommerce table.cart td.actions .button { width: 100%; }
+  .pagina-negozio .woocommerce .cart_totals { padding: 22px; }
+  /* WooCommerce colora di grigio le righe pari della tabella impilata. */
+  .pagina-negozio .woocommerce table.shop_table_responsive tr:nth-child(2n) td,
+  .pagina-negozio .woocommerce table.shop_table_responsive tr td.actions { background: transparent; }
+
+  /* --- griglia ----------------------------------------------------------
+     A 390px il padding del contenitore si ferma a 20px, ma gx-5 fa margini
+     di -24px: le row sbordano. Si limita il gutter sotto quella soglia. */
+  .container-iz .row { --bs-gutter-x: 24px; }
+
+  /* --- hero -------------------------------------------------------------- */
+  .sezione-hero .s-h-sub { margin-top: 28px; }
+  .sezione-hero .bottone { margin-top: 44px; }
+
+  /* --- categorie --------------------------------------------------------- */
+  .sezione-categorie .s-c-card { height: 200px; gap: 20px; }
+  .sezione-categorie .s-c-icona svg { height: 66px; }
+  .sezione-categorie .s-c-riga { gap: 16px; }
+  .sezione-categorie .s-c-freccia { width: 40px; height: 40px; }
+  .sezione-categorie .s-c-freccia svg { width: 26px; }
+
+  /* --- servizi ------------------------------------------------------------
+     Su due colonne il divisore va tolto anche alla terza voce, se no spunta
+     a inizio della seconda riga. Il design fa lo stesso. */
+  .sezione-servizi [class*="col-"]:nth-child(3) .s-sv-voce:before { display: none; }
+  .sezione-servizi .s-sv-voce { min-height: 190px; gap: 18px; padding: 28px 12px; }
+  .sezione-servizi .s-sv-icona svg { height: 52px; }
+
+  /* --- best seller ------------------------------------------------------- */
+  .prodotto-card .pc-dati,
+  .prodotto-card .pc-nome { font-size: 18px; }
+
+  /* --- progetti ---------------------------------------------------------- */
+  .sezione-progetti { padding-bottom: clamp(48px,10vw,80px); }
+  .sezione-progetti .s-pg-arco { display: none; }
+
+  /* --- chi sono ---------------------------------------------------------- */
+  .sezione-chisono .s-ch-foto { max-width: 320px; margin-bottom: 8px; }
+
+  /* --- footer ------------------------------------------------------------ */
+  #footer .f-logo img { width: 280px; max-width: 80%; }
+  #footer .f-badge img { width: 96px; }
+  #footer .f-blocco,
+  #footer .f-b-menu { font-size: 17px; }
+  /* Colonne impilate: il form non deve attaccarsi ai link di servizio. */
+  #footer .f-form { margin-top: 48px; }
+  #footer .f-form .fc-riga-invio { justify-content: flex-start; }
+  #footer .f-form input[type="submit"] { width: 100%; }
+
+  .f-legale .f-interno { flex-direction: column; gap: 8px; text-align: center; }
+  .f-legale .f-l-link { justify-content: center; gap: 24px; }
+
+
+  /* --- pagine interne ------------------------------------------------------ */
+  .filtro-pillole { gap: 8px; }
+  .filtro-pillole a { height: 40px; padding: 0 18px; font-size: 14px; }
+  .post-cover { aspect-ratio: 16 / 10; }
+  .blocco-info { font-size: 17px; }
+  .blocco-info h4 { font-size: 17px; }
+  .post-card .pc-estratto { font-size: 16px; }
+  #content .woocommerce div.product.scheda-prodotto .flex-control-thumbs { grid-template-columns: repeat(4, 1fr); }
+  #content .woocommerce div.product.scheda-prodotto .single_add_to_cart_button { flex: 1 1 auto; }
+
+}

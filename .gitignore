@@ -1,0 +1,22 @@
+# Repo PUBBLICO: solo il codice fatto su misura per ivanazanetti.it.
+# Lista bianca: tutto e' escluso tranne quello elencato sotto.
+#  - uploads: media del sito, log di WooCommerce con dati dei clienti,
+#    file dei prodotti scaricabili
+#  - plugin di terzi: si installano da wordpress.org; ACF Pro e' a
+#    pagamento e la licenza non ne permette la ridistribuzione
+/*
+!/.gitignore
+!/README.md
+!/index.php
+
+!/themes/
+/themes/*
+!/themes/index.php
+!/themes/ivanazanetti/
+
+!/plugins/
+/plugins/*
+!/plugins/index.php
+!/plugins/on-demand-sizes/
+
+*.log
