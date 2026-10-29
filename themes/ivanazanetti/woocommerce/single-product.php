@@ -44,7 +44,10 @@ while ( have_posts() ): the_post();
 
 	      <?php
 	      /* Molte descrizioni importate da Divi contengono solo la parola
-	         "Descrizione:": il testo vero sta nella descrizione breve. */
+	         "Descrizione:": col Divi Builder il testo vero era finito nel meta
+	         _et_pb_old_content (rimesso nel contenuto da
+	         acf-setup/ripristina-descrizioni.php). Senza testo la sezione
+	         non si mostra. */
 	      $descrizione = ivanazanetti_abbassa_h1( apply_filters( 'the_content', ivanazanetti_pulisci_divi( $product->get_description() ) ) );
 	      $solo_testo  = trim( preg_replace( '/^\s*descrizione\s*:?/iu', '', wp_strip_all_tags( $descrizione ) ) );
 	      ?>
